@@ -1,3 +1,106 @@
 body {
+  width: 100vw;
   background-color: #60d9f1;
+}
+header h1{
+  text-align: center;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+}
+
+.player audio{
+  width: 80vw;
+}
+
+.search{
+  margin-left: 1vw;
+  align-self: center;
+  width: 95vw;
+  height: 8vw;
+  margin-top: 3vw;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.search-form{
+
+  width: 90vw;
+  height:8vw;
+}
+
+.search-form input{
+  font-weight: 200;
+  color: grey;
+  font-size: 16pt;
+  width: 70vw;
+  height: 2vw;
+  margin-top: 3vw;
+}
+.button{
+  /*box-shadow: 0 2px 2px 0 #C2C2C2*/
+  margin-left: 2vw;
+  border-radius: 9px;
+  font-size: 12pt;
+  padding-top: 1vw;
+  width: 15vw;
+  height: 3vw;
+}
+.button:hover{
+  border: 1px solid;
+ box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+ outline-color: rgba(255, 255, 255, 0);
+ outline-offset: 15px;
+ text-shadow: 1px 1px 2px #427388;
+}
+  h5{
+  margin-left: 1vw;
+  font-size: 12pt;
+  padding-top: 0vw;
+  margin-top: 1vw;
+}
+.results{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vw;
+}
+.el1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 3vw;
+  margin-left: 1vw;
+  margin-top: 3vw;
+  border: 1px solid black;
+  width: 20vw;;
+  height: 18vw;
+}
+
+.el1 img{
+
+  margin-left: 6vw;
+  border: 1px solid red;
+  width: 8vw;
+  height: 8vw;
+}
+.el1 h4{
+  height: 1.5vw;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  font-size: 12pt;
+  text-align: center;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
+.el1 h2{
+  height: 1.5vw;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  font-size: 12pt;
+  text-align: center;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
