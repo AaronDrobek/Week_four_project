@@ -7,20 +7,23 @@
 // 3. Create your `fetch` request that is called after a submission
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
-let search = document.getElementById("search");
-let results = document.querySelector(".results")
-let searchBar    = document.getElementById("searchBar");
+let search    = document.getElementById("search");
+let results   = document.querySelector(".results")
+let searchBar = document.getElementById("searchBar");
 let button    = document.querySelector("button");
 
 button.addEventListener('click', function(){
   // console.log("button was clicked");
-  let results = document.getElementById("results");
+  let searchBar = document.getElementById("searchBar");
 
   // let searchBar = searchBar.value;
 
 
 
-})
+    while(results.firstChild){
+      results.removeChild(results.firstChild);
+    }
+
 
 let bar = searchBar.value;
 
@@ -50,3 +53,4 @@ fetch("https://itunes.apple.com/search?term=" + bar )
       }
     })
   })
+})
