@@ -60,19 +60,20 @@ fetch("https://itunes.apple.com/search?term=" + bar )
         // })
 
         el1.innerHTML=
+
         `<img src=${data.results[i].artworkUrl100}>
         <h4 class= "song_title">${data.results[i].trackName}</h4>
 
         <h2 class= "artist_title">${data.results[i].artistName}</h2>
         </div>`
-        // let preview = document.createElement("input");
-        // preview.setAttribute("class", "preview");
-        // preview.textContent="preview";
-        //
-        // preview.setAttribute("value", `${data.results[i].previewUrl}`);
-        // let clip = preview.value;
-        // el1.appendChild(preview);
-        //
+        let preview = document.createElement("input");
+        preview.setAttribute("class", "preview");
+        preview.textContent="preview";
+
+        preview.setAttribute("value", `${data.results[i].previewUrl}`);
+        let clip = preview.value;
+        el1.appendChild(preview);
+
         // preview.addEventListener('click', function(){
         //   musicPlayer.load(clip);
         //   console.log("clicked button");
@@ -85,7 +86,7 @@ fetch("https://itunes.apple.com/search?term=" + bar )
       //   musicPlayer.setAttribute('src', `${data.results[i].previewUrl}`);
       //   }
       // }
-
+    
 
 
         // musicPlayer.load()
