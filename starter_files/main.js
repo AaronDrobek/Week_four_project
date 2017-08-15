@@ -11,89 +11,89 @@ let search    = document.getElementById("search");
 let results   = document.querySelector(".results")
 let searchBar = document.getElementById("searchBar");
 let button    = document.querySelector("button");
-let musicPlayer = document.getElementsByClassName("musicPlayer");
+// let musicPlayer = document.getElementsByClassName("musicPlayer");
 
 
 
 
 
 button.addEventListener('click', function(){
-  // console.log("button was clicked");
+
   let searchBar = document.getElementById("searchBar");
 
   // let searchBar = searchBar.value;
-// searchBar.addEventListener('keypress', function (e) {
-//     var key = e.which || e.keyCode;
-//     if (key === 13) { // 13 is enter
-//       // code for enter
-//     }
+  // searchBar.addEventListener('keypress', function (e) {
+  //     var key = e.which || e.keyCode;
+  //     if (key === 13) { // 13 is enter
+  //       // code for enter
+  //     }
 
 
-    while(results.firstChild){
-      results.removeChild(results.firstChild);
-    }
+  while(results.firstChild){
+    results.removeChild(results.firstChild);
+  }
 
 
-let bar = searchBar.value;
+  let bar = searchBar.value;
 
 
-fetch("https://itunes.apple.com/search?term=" + bar )
-.then(
-  function(response) {
-    if (response.status !== 200) {
-      console.log(response.status);
-      return;
-    }
-    response.json().then(function(data) {
-      console.log("Here is the data:", data);
-
-
-
-      for (var i = 0; i < data.results.length; i++) {
-
-        let el1 = document.createElement("div");
-        el1.classList.add("el1");
-        // let preview = document.createElement("button");
-        // preview.setAttribute("src", "${data.results[i].previewUrl}")
-        // preview.addEventListener('click', function(){
-        //
-        // })
-
-        el1.innerHTML=
-
-        `<img src=${data.results[i].artworkUrl100}>
-        <h4 class= "song_title">${data.results[i].trackName}</h4>
-
-        <h2 class= "artist_title">${data.results[i].artistName}</h2>
-        </div>`
-        let preview = document.createElement("input");
-        preview.setAttribute("class", "preview");
-        preview.textContent="preview";
-
-        preview.setAttribute("value", `${data.results[i].previewUrl}`);
-        let clip = preview.value;
-        el1.appendChild(preview);
-
-        // preview.addEventListener('click', function(){
-        //   musicPlayer.load(clip);
-        //   console.log("clicked button");
-        // })
-
-        results.appendChild(el1);
+  fetch("https://itunes.apple.com/search?term=" + bar )
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log(response.status);
+        return;
       }
-      // let play = function (){
-      // window.onload = function (){
-      //   musicPlayer.setAttribute('src', `${data.results[i].previewUrl}`);
-      //   }
-      // }
-    
+      response.json().then(function(data) {
+        console.log("Here is the data:", data);
 
 
-        // musicPlayer.load()
+
+        for (var i = 0; i < data.results.length; i++) {
+
+          let el1 = document.createElement("div");
+          el1.classList.add("el1");
+          el1.setAttribute("src", `${data.results[i].previewUrl}`);
+          let image = document.createElement("img");
+          image.setAttribute("src", `${data.results[i].artworkUrl100}` );
+          el1.appendChild(image);
+
+          let song_title = document.createElement("h4");
+          song_title.setAttribute("id", "song_title");
+          song_title.textContent= `${data.results[i].trackName}`
+          el1.appendChild(song_title);
+
+          let artist_title=document.createElement("h2");
+          artist_title.setAttribute("id", "artist_title");
+          artist_title.textContent=`${data.results[i].artistName}`;
+          el1.appendChild(artist_title);
+          let music = `${data.results[i].previewUrl}`;
+
+
+          // music.children().append( el1 );
+          results.appendChild(el1);
+
+          el1.addEventListener('click', function(){
+
+            // music.(event.target.value);
+            musicPlayer.src = music;
+            musicPlayer.load();
+            musicPlayer.play();
+
+
+        })
+
+        }
+
+
+
       })
 
+
     })
-    })
+
+  })
+
 
 
 
