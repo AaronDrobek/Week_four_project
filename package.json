@@ -2,7 +2,7 @@
   "name": "itunes_project",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/AaronDrobek/itunes_project#readme",
+  "homepage": "https://aarondrobek.github.io/itunes_project/",
   "main": "index.html",
   "scripts": {
     "deploy": "gh-pages-deploy",
