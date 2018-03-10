@@ -12,7 +12,7 @@ let results   = document.querySelector(".results")
 let searchBar = document.getElementById("searchBar");
 let button    = document.querySelector("button");
 // let musicPlayer = document.getElementsByClassName("musicPlayer");
-s
+
 
 
 
