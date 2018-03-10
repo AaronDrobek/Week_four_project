@@ -12,12 +12,11 @@ let results   = document.querySelector(".results")
 let searchBar = document.getElementById("searchBar");
 let button    = document.querySelector("button");
 // let musicPlayer = document.getElementsByClassName("musicPlayer");
+s
 
 
 
-
-
-button.addEventListener('click', 'submit', function(){
+button.addEventListener('click',function(){
 
   let searchBar = document.getElementById("searchBar");
 
@@ -73,7 +72,7 @@ button.addEventListener('click', 'submit', function(){
           // music.children().append( el1 );
           results.appendChild(el1);
 
-          el1.addEventListener('click', 'submit', function(){
+          el1.addEventListener('click',  function(){
 
             // music.(event.target.value);
             musicPlayer.src = music;
