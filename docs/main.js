@@ -17,7 +17,7 @@ let button    = document.querySelector("button");
 
 
 
-button.addEventListener('click', function(){
+button.addEventListener('click', 'submit', function(){
 
   let searchBar = document.getElementById("searchBar");
 
@@ -73,7 +73,7 @@ button.addEventListener('click', function(){
           // music.children().append( el1 );
           results.appendChild(el1);
 
-          el1.addEventListener('click', function(){
+          el1.addEventListener('click', 'submit', function(){
 
             // music.(event.target.value);
             musicPlayer.src = music;
